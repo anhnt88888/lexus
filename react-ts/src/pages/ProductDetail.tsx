@@ -81,6 +81,7 @@ const ProductDetailPage = (props: IProps) => {
       title: "Price",
       dataIndex: "price",
       key: "price",
+      render: (text) => <a>{text}</a>,
     },
     {
       title: "Image",
@@ -89,6 +90,12 @@ const ProductDetailPage = (props: IProps) => {
       render: (imgLink) => (
         <img src={imgLink} alt="" style={{ width: "500px" }} />
       ),
+    },
+    {
+      title: "Description",
+      dataIndex: "desc",
+      key: "desc",
+      render: (text) => <a>{text}</a>,
     },
   ];
 
