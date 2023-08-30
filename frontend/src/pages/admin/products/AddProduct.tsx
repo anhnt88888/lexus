@@ -1,6 +1,6 @@
-import { IProduct } from "../../types/product";
+import { IProduct } from "../../../types/product";
 import { Form, Input, Select } from "antd";
-import { ICategory } from "../../types/category";
+import { ICategory } from "../../../types/category";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {
@@ -8,7 +8,7 @@ interface IProps {
   category: ICategory[];
 }
 
-const AddProductPage = (props: IProps) => {
+const AddProduct = (props: IProps) => {
   const navigate = useNavigate();
 
   const onFinish = (values: any) => {
@@ -91,15 +91,6 @@ const AddProductPage = (props: IProps) => {
           <Input.TextArea style={{ height: 200 }} />
         </Form.Item>
 
-        <Form.Item
-          label="Product Image"
-          name="image"
-          rules={[{ required: true, message: "Please input your image!" }]}
-          hasFeedback
-        >
-          <input type="file" />
-        </Form.Item>
-
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <button>Add Product</button>
         </Form.Item>
@@ -108,4 +99,4 @@ const AddProductPage = (props: IProps) => {
   );
 };
 
-export default AddProductPage;
+export default AddProduct;

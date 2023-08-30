@@ -18,7 +18,11 @@ const SignIn = (props: Iprops) => {
       <h3 className="txt-title-inup">Đăng nhập tài khoản</h3>
       <Form
         name="basic"
-        style={{ maxWidth: 400, marginLeft: 400, marginTop: 50 }}
+        style={{
+          maxWidth: 400,
+          margin: "auto",
+          marginTop: 50,
+        }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}

@@ -1,6 +1,6 @@
 import { Space, Table, Button } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { IProduct } from "../../types/product";
+import { IProduct } from "../../../types/product";
 import { Link } from "react-router-dom";
 
 interface DataType {
@@ -16,7 +16,7 @@ interface IProps {
   onRemove: (id: string) => void;
 }
 
-const ProductManagementPage = (props: IProps) => {
+const ListProduct = (props: IProps) => {
   const removeProduct = (_id: string) => {
     props.onRemove(_id);
   };
@@ -102,4 +102,4 @@ const ProductManagementPage = (props: IProps) => {
   );
 };
 
-export default ProductManagementPage;
+export default ListProduct;

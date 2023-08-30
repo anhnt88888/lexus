@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { IProduct } from "../types/product";
+import { IProduct } from "../../types/product";
 import { Link } from "react-router-dom";
-import "../css/product.css";
+import "../../css/product.css";
 
 interface IProps {
   products: IProduct[];

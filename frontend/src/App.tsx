@@ -6,13 +6,12 @@ import {
   deleteProduct,
   updateProduct,
 } from "./api/product";
-import HomePage from "./pages/HomePage";
-import DashBoard from "./pages/admin/DashBoard";
-import ProductPage from "./pages/ProductPage";
-import AddProductPage from "./pages/admin/AddProduct";
-import UpdateProductPage from "./pages/admin/UpdateProduct";
-import ProductDetailPage from "./pages/ProductDetail";
-import ProductManagementPage from "./pages/admin/ProductManagement";
+import HomePage from "./pages/client/HomePage";
+import DashBoard from "./pages/admin/products/DashBoard";
+import ProductPage from "./pages/client/ProductPage";
+import AddProduct from "./pages/admin/products/AddProduct";
+import ProductDetailPage from "./pages/client/ProductDetail";
+import ListProduct from "./pages/admin/products/ListProduct";
 import { IProduct } from "./types/product";
 import { ICategory } from "./types/category";
 import WebsiteLayout from "./layouts/WebsiteLayout";
@@ -30,6 +29,7 @@ import SignIn from "./auth/SignIn";
 import SignUp from "./auth/SignUp";
 import { signIn, signUp } from "./api/auth";
 import { IUser } from "./types/user";
+import UpdateProduct from "./pages/admin//products/UpdateProduct";
 
 function App() {
   const navigate = useNavigate();
@@ -162,25 +162,17 @@ function App() {
           <Route
             path="products"
             element={
-              <ProductManagementPage
-                products={products}
-                onRemove={onHandleRemove}
-              />
+              <ListProduct products={products} onRemove={onHandleRemove} />
             }
           />
           <Route
             path="products/add"
-            element={
-              <AddProductPage onAdd={onHandleAdd} category={categories} />
-            }
+            element={<AddProduct onAdd={onHandleAdd} category={categories} />}
           />
           <Route
             path="products/:id/update"
             element={
-              <UpdateProductPage
-                products={products}
-                onUpdate={onHandleUpdate}
-              />
+              <UpdateProduct products={products} onUpdate={onHandleUpdate} />
             }
           />
         </Route>

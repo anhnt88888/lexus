@@ -20,7 +20,7 @@ const SignUp = (props: IProps) => {
       <h3 className="txt-title-inup">Đăng ký tài khoản</h3>
       <Form
         name="basic"
-        style={{ maxWidth: 400, marginLeft: 400, marginTop: 50 }}
+        style={{ maxWidth: 400, margin: "auto", marginTop: 50 }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -60,9 +60,7 @@ const SignUp = (props: IProps) => {
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-          <button style={{ backgroundColor: "#fa541c", marginRight: 400 }}>
-            Đăng ký
-          </button>
+          <button>Đăng ký</button>
         </Form.Item>
       </Form>
     </div>

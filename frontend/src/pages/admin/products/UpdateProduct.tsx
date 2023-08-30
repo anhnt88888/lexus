@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IProduct } from "../../types/product";
+import { IProduct } from "../../../types/product";
 import { Form, Input, Select } from "antd";
-import { ICategory } from "../../types/category";
-import { getAllCategory } from "../../api/category";
+import { ICategory } from "../../../types/category";
+import { getAllCategory } from "../../../api/category";
 
 interface IProps {
   products: IProduct[];
@@ -11,7 +11,7 @@ interface IProps {
   onUpdate: (id, product: IProduct) => void;
 }
 
-const UpdateProductPage = (props: IProps) => {
+const UpdateProduct = (props: IProps) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState<IProduct>();
@@ -109,4 +109,4 @@ const UpdateProductPage = (props: IProps) => {
   );
 };
 
-export default UpdateProductPage;
+export default UpdateProduct;
